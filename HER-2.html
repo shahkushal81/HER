@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Just One More Thing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('https://images.unsplash.com/photo-1707234590032-bb0286be4b72?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        font-family: 'Segoe UI', sans-serif;
+        color: #2d445a;
+        overflow: hidden;
+      }
+
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        color: #000000;
+        font-size: 8px !important;
+        z-index: 9999;
+        pointer-events: none;
+        user-select: none;
+        animation-name: fall;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0.77;
+        }
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .main {
+        background: rgba(255, 255, 255, 0.363);
+        border-radius: 18px;
+        box-shadow: 1px 10px 15px #0e1112;
+        padding: 32px 40px 48px 40px;
+        max-width: 420px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .main_title {
+        font-family: 'Share Tech Mono', monospace;
+      }
+
+      .main_message {
+        font-family: 'Audiowide', cursive;
+      }
+
+      .wish {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: larger;
+        color: #ff0080;
+      }
+
+      .button_container {
+        display: flex;
+        justify-content: center;
+        gap: 3cm;
+      }
+
+      .main_button,
+      .gift_button {
+        background-color: rgba(255, 255, 255, 0.477);
+        color: #8400ff;
+        border: none;
+        border-radius: 24px;
+        padding: 12px 32px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        box-shadow: 1px 5px 10px #0e1112;
+      }
+
+      .main_button:hover,
+      .gift_button:hover {
+        background-color: #f2e9ff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="main">
+        <h2 class="main_title">Just One More Thing...</h2>
+        <p class="main_message">
+          Hey Hella,<br /><br />
+          I know things aren’t the same between us anymore. But that doesn’t mean I forgot.
+          It’s your day today. And even if I don’t get to say this in person, I still hope it reaches you.
+          <br /><br />
+          <te class="wish"> Happiest Birthday Ever Hellu.</te> 🎈❤️‍🔥🧸
+          <br /><br />
+          I hope you're surrounded by love, peace, and laughter. Not just today, but every day.<br /><br />
+          This isn’t me trying to reopen anything.
+          Just... acknowledging someone who meant a lot once.<br /><br />
+          So, from this little webpage— Happy Birthday, once again.<br /><br />
+          No matter what, you deserve all the love and happiness in the world.<br /><br />
+          <span style="font-weight: bold; color: #593277;">
+           “If someday our paths cross again,I hope we greet each other with a smile.Take care.”
+          </span>
+        </p>
+      </div>
+
+      <div class="button_container">
+        <button class="main_button" onclick="window.location.href='HER-1.html'">Back</button>
+        <button class="gift_button" onclick="window.location.href='HER-3.html'">Bums</button>
+      </div>
+    </div>
+
+    <script>
+      const snowColors = ['#fff', '#eaf6fb', '#dbefff'];
+      function createSnowflake() {
+        const snowflake = document.createElement('span');
+        snowflake.className = 'snowflake';
+        snowflake.innerHTML = '⚪';
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        let size = Math.random() * 4 + 6;
+        snowflake.style.fontSize = size + 'px';
+        snowflake.style.opacity = (Math.random() * 0.5 + 0.5).toString();
+        snowflake.style.animationDuration = Math.random() * 4 + 8 + 's';
+        snowflake.style.color = snowColors[Math.floor(Math.random() * snowColors.length)];
+        document.body.appendChild(snowflake);
+        setTimeout(() => {
+          snowflake.remove();
+        }, 18000);
+      }
+
+      setInterval(() => {
+        createSnowflake();
+        createSnowflake();
+      }, 300);
+    </script>
+  </body>
+</html>

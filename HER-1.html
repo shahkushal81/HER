@@ -1,0 +1,178 @@
+<html>
+   <head>
+    <meta charset="UTF-8">
+    <title>HER..!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+
+    <style>
+           
+     body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: 'Segoe UI', sans-serif;
+        color: #2d445a;
+        position: relative;
+    }
+
+    .bg-blur {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1685248307090-7398826be120?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        filter: blur(2px); /* Adjust blur here */
+        z-index: -1;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding-top: 20vh;
+    }
+
+        .home_card{
+            top: 45%;
+            left: 50%;
+            z-index: 10;
+            position: relative;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.363);
+            border-radius: 18px;
+            box-shadow:  1px 10px 15px #0e1112;
+            padding: 32px 40px 48px 40px;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .home_title{
+            font-size: 2.2em;
+            color: rgb(61, 12, 88);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            margin: botton;
+            color: 3e5a70;
+        }
+
+        .home_message{
+            font-family: 'Audiowide', cursive;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .home_button{
+            margin-top: 6cm;
+            margin-left: 18.5cm;
+            z-index: 10;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.477);;
+            color: #8400ff;
+            border: none;
+            border-radius: 24px;
+            padding: 12px 32px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow:  1px 5px 10px #0e1112;
+        }
+
+        .home_button:hover{
+            background-color: #eaf6fb99;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #000000;
+            font-size: 8px !important;
+            z-index: 0; /* Changed from 9999 to 0 */
+            pointer-events: none;
+            user-select: none;
+            animation-name: fall;
+            animation-iteration-count: infinite;
+        }
+
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0.77;
+            }
+        }
+
+
+
+
+
+    </style>
+
+    <div class="bg-blur"></div>
+
+   </head>
+   <body>
+
+        <div class="home_card">
+            <div class="home_title"> <h3>To, Dudh Ni Theli 🌟💖🌟</h3></div><br>
+
+            <div class="home_message"> 
+                Wishing you a magical day filled with warmth and joy,<br>
+                even when the world outside is snowy and cold.<br><br>
+                May every snowflake bring you a smile! 😊<br> </div>
+        </div>
+        
+       <button class="home_button"  onclick="window.location.href='HER-2.html'"> Message.. </button>
+
+
+        <script>
+        // Snow Animation (smaller snowflakes & slower speed)
+        const snowColors = ['#fff', '#eaf6fb', '#dbefff'];
+        function createSnowflake() {
+            const snowflake = document.createElement('span');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '⚪';
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+
+            // Smaller size for snowflakes
+            let size = (Math.random() * 4 + 6); // between 6 and 10 px
+            snowflake.style.fontSize = size + 'px';
+
+            snowflake.style.opacity = (Math.random() * 0.5 + 0.5).toString();
+
+            // Slower animation
+            snowflake.style.animationDuration = (Math.random() * 4 + 8) + 's'; // between 8s and 12s
+
+            snowflake.style.color = snowColors[Math.floor(Math.random() * snowColors.length)];
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 18000);
+        }
+            setInterval(() => {
+                createSnowflake();
+                createSnowflake(); // add second one
+                // createSnowflake(); // uncomment for even more
+            }, 300);
+
+
+        // Popup
+        function showPopup() {
+            document.getElementById('popupBg').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popupBg').style.display = 'none';
+        }
+    </script>
+
+   </body> 
+</html>
